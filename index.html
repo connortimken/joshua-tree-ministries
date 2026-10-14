@@ -173,6 +173,7 @@ h2{font-size:clamp(32px,4.4vw,52px);max-width:20ch}
 .item .w{font-size:12px;color:var(--mute);text-align:right}
 @media(max-width:699px){.item .w{text-align:left}}
 .libcount{margin-top:12px;font-size:13px;color:var(--mute)}
+.libmore{display:none}
 
 /* give */
 .give{background:var(--ink);color:#fff}
@@ -225,18 +226,68 @@ footer .soc a{display:block;padding:3px 0}
 @media(max-width:700px){.mbar{display:grid}}
 
 @media(max-width:700px){
-  section{padding:64px 0}
-  .hero .wrap{padding-top:48px;padding-bottom:44px}
-  .capline{font-size:clamp(34px,10.5vw,46px)}
+  body{font-size:17px;line-height:1.7}
+  .wrap{padding:0 22px}
+  section{padding:88px 0}
+  .kick{margin-bottom:20px}
+  h2{font-size:clamp(34px,9.5vw,42px);line-height:1.12}
+  .lede{margin-top:22px;font-size:17px}
+  .hero .wrap{padding-top:64px;padding-bottom:56px;gap:48px}
+  .capline{font-size:clamp(36px,10.5vw,46px);margin-top:24px;line-height:1.14}
+  .hero .sub{margin-top:28px;font-size:17px}
+  .hero .ctas{margin-top:34px;gap:14px}
+  .hero .ctas .btn{padding:16px 24px}
+  .hero .verse{margin-top:40px}
+  .feed{padding:16px}
   .mark span{display:none}.mark svg{width:44px;height:44px}
   nav.top .wrap{height:64px}
-  .stop b{font-size:22px}
-  .verse2{padding:26px}
-  .ser{min-height:0}
-  .gpanel{padding:20px}
-  .form{padding:22px}
-  footer{padding:44px 0 110px}
-  .biglogo svg{width:120px;height:120px}
+  .marq{padding:18px 0}
+  .path{margin-top:48px}
+  .path svg{display:none}
+  .stops{gap:22px}
+  .stop{padding:22px 0 22px 22px;border-left:1px solid var(--line)}
+  .stop::before{left:-7px;top:26px}
+  .stop b{font-size:24px;margin-top:10px}
+  .stop p{margin-top:10px;font-size:15.5px}
+  .morn{margin-top:40px;gap:12px}
+  .step{padding:28px 24px;min-height:230px}
+  .mornnav{margin-top:12px}
+  .photos{margin-top:48px;gap:12px}
+  .photos .photo:nth-child(n+3){display:none}
+  .verse2{margin-top:52px;padding:34px 26px;gap:22px}
+  .series{margin-top:44px;gap:18px}
+  .ser{min-height:0;padding:30px 26px}
+  .ser h3{font-size:28px}
+  .where{margin-top:36px;gap:10px}
+  .lib{margin-top:36px;gap:18px}
+  .chips{gap:8px}
+  .chip{padding:11px 14px}
+  .items{margin-top:28px}
+  .item{padding:18px 2px;gap:6px}
+  .item .t{font-size:17px}
+  .item.more{display:none}
+  .items.open .item.more{display:grid}
+  .libmore{display:block;width:100%;margin-top:18px}
+  .gtabs{margin-top:44px;gap:10px}
+  .gpanel{padding:26px 22px;margin-top:24px;gap:28px}
+  .gpanel .acts{margin-top:22px;gap:10px}
+  .gpanel p{margin-top:14px}
+  .gpanel .qr{margin:0 auto}
+  .fine{margin-top:32px}
+  .vol .wrap{gap:48px}
+  .form{padding:26px 22px}
+  .form label{margin:20px 0 8px}
+  .form input,.form textarea{padding:14px 16px}
+  .form .btn{margin-top:24px;padding:16px}
+  .quote{margin-top:32px}
+  .pray .wrap{gap:56px}
+  .row{gap:12px;margin-top:20px}
+  .row .btn{width:100%;justify-content:center;padding:16px}
+  .row input{padding:14px 16px}
+  footer{padding:56px 0 120px}
+  footer .grid{gap:34px}
+  .biglogo{margin-top:52px}.biglogo svg{width:120px;height:120px}
+  .fine2{margin-top:44px;flex-direction:column;gap:10px}
 }
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.capline .w{opacity:1;transform:none}.draw path{stroke-dashoffset:0}.draw text{opacity:1}.path .line{stroke-dashoffset:0}.path .stop{opacity:1;transform:none}.marq .track{animation:none}}
 </style></head>
@@ -274,7 +325,7 @@ footer .soc a{display:block;padding:3px 0}
 <div class="marq" aria-hidden="true"><div class="track" id="marq"></div></div>
 
 <section id="path"><div class="wrap">
-  <div class="rv"><div class="kick">01 &nbsp; Start here</div><h2>One road. Four stops. Start wherever you are.</h2><p class="lede">Most people find us through a video. Some come straight to the street. Either way, this is the path.</p></div>
+  <div class="rv"><div class="kick">01 &nbsp; Start here</div><h2>One road. Four stops. Start wherever you are.</h2><p class="lede">Most people find us through a video. Some come straight to the street. This is the path.</p></div>
   <div class="path" id="pathwrap">
     <svg viewBox="0 0 1140 60" preserveAspectRatio="none" aria-hidden="true"><path class="line" id="pathline" d="M6 52 Q151 4 296 52 Q441 4 586 52 Q731 4 876 52 Q1005 4 1134 52"/></svg>
     <div class="stops">
@@ -320,6 +371,7 @@ footer .soc a{display:block;padding:3px 0}
   <div class="rv"><div class="kick">04 &nbsp; Library</div><h2>Everything we have written and recorded, in one place.</h2><p class="lede">Filter by type or search a topic. Video series, Bible studies and the discipleship blog, all free.</p></div>
   <div class="lib rv"><div class="chips" id="chips"></div><label class="search"><input id="q" type="search" placeholder="Search: prayer, marriage, pride, Esther" autocomplete="off"></label></div>
   <div class="items" id="items"></div>
+  <button type="button" class="btn ghost libmore" id="libmore">Show all</button>
   <p class="libcount" id="libcount"></p>
 </div></section>
 
@@ -440,11 +492,13 @@ footer .soc a{display:block;padding:3px 0}
     chips.innerHTML = types.map(function(t){ var n = t==="All" ? L.length : L.filter(function(x){return x.type===t}).length; return '<button type="button" class="chip'+(t===active?' on':'')+'" data-t="'+t+'">'+t+'<small>'+n+'</small></button>'; }).join("");
     var term = q.value.trim().toLowerCase();
     var list = L.filter(function(x){ return (active==="All"||x.type===active) && (!term || x.t.toLowerCase().indexOf(term)>-1); });
-    items.innerHTML = list.length ? list.map(function(x,i){ return '<a class="item" style="--i:'+Math.min(i,30)+'" href="'+x.url+'" target="_blank" rel="noopener"><span class="k">'+x.type+'</span><span class="t">'+x.t+'</span><span class="w">'+x.where+' &rarr;</span></a>'; }).join("") : '<p style="padding:30px 0;color:var(--mute);font-style:italic">Nothing with that word yet. Try one of the filters.</p>';
+    items.classList.remove("open"); var lm = document.getElementById("libmore"); lm.textContent = "Show all " + list.length; lm.style.display = list.length > 6 ? "" : "none";
+    items.innerHTML = list.length ? list.map(function(x,i){ return '<a class="item'+(i>=6?' more':'')+'" style="--i:'+Math.min(i,30)+'" href="'+x.url+'" target="_blank" rel="noopener"><span class="k">'+x.type+'</span><span class="t">'+x.t+'</span><span class="w">'+x.where+' &rarr;</span></a>'; }).join("") : '<p style="padding:30px 0;color:var(--mute);font-style:italic">Nothing with that word yet. Try one of the filters.</p>';
     cnt.textContent = list.length + " of " + L.length + (term ? ' matching "' + q.value.trim() + '"' : "");
   }
   chips.addEventListener("click", function(e){ var b = e.target.closest(".chip"); if(!b) return; active = b.dataset.t; render(); });
   q.addEventListener("input", render); render();
+  document.getElementById("libmore").addEventListener("click", function(){ items.classList.add("open"); this.style.display = "none"; });
 })();
 </script>
 </body></html>
