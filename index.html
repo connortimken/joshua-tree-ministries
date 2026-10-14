@@ -289,6 +289,25 @@ footer .soc a{display:block;padding:3px 0}
   .biglogo{margin-top:52px}.biglogo svg{width:120px;height:120px}
   .fine2{margin-top:44px;flex-direction:column;gap:10px}
 }
+
+@media(max-width:700px){
+  .tag,.marq,.hero .verse,.photos,.where,.fine,.pray .wrap > div:nth-child(2),.libcount,#library .lede,#teaching .lede,.feed .note{display:none}
+  .hero .sub{max-width:34ch}
+  .hero .wrap{padding-top:56px;padding-bottom:48px;gap:40px}
+  .step p{font-size:15px}
+  .ser p{display:none}
+  .ser{min-height:0;padding:26px 24px}
+  .ser h3{font-size:26px;margin-top:8px}
+  .item .w{display:none}
+  .item{padding:16px 2px}
+  .gpanel p{font-size:14.5px}
+  footer .grid > div:nth-child(4){display:none}
+  footer{padding:48px 0 120px}
+  .fine2{font-size:12px}
+  .lede{font-size:16.5px}
+  section{padding:80px 0}
+  h2{font-size:clamp(32px,9vw,40px)}
+}
 @media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.capline .w{opacity:1;transform:none}.draw path{stroke-dashoffset:0}.draw text{opacity:1}.path .line{stroke-dashoffset:0}.path .stop{opacity:1;transform:none}.marq .track{animation:none}}
 </style></head>
 <body>
@@ -412,7 +431,7 @@ footer .soc a{display:block;padding:3px 0}
     <div><b>Read</b><a href="#library">Library</a><br><a href="https://sites.google.com/view/joshuatreeministries/statement-of-faith" target="_blank" rel="noopener">Statement of faith</a><br><a href="https://sites.google.com/view/joshuatreeministries/home" target="_blank" rel="noopener">Study site</a></div>
   </div>
   <div class="biglogo"><svg class="draw" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98" fill="#fff"/><g fill="none" stroke="#0E0F11" stroke-width="6"><path d="M44 44v44c0 10-5 16-14 16-6 0-10-3-13-7"/><path d="M82 22v90M68 42h28"/><path d="M124 100V44l24 36 24-36v56"/><path d="M14 122h172" stroke-width="2"/></g><text x="100" y="146" text-anchor="middle" font-family="Josefin Sans,Inter,sans-serif" font-weight="400" font-size="14" fill="#0E0F11">Joshua <tspan font-size="19" dy="1">&#10013;</tspan><tspan dy="-1" dx="-3">ree Ministries</tspan></text></svg></div>
-  <div class="fine2"><span>&copy; 2026 Joshua Tree Ministries. Matthew 25.</span><a href="#top">Back to top &uarr;</a></div>
+  <div class="fine2"><span>&copy; 2026 Joshua Tree Ministries. Concept built by Ascend Delta.</span><a href="#top">Back to top &uarr;</a></div>
 </div></footer>
 
 <div class="mbar" id="mbar"><a href="#give">Give</a><a href="#volunteer">Come with us</a></div>
@@ -492,8 +511,8 @@ footer .soc a{display:block;padding:3px 0}
     chips.innerHTML = types.map(function(t){ var n = t==="All" ? L.length : L.filter(function(x){return x.type===t}).length; return '<button type="button" class="chip'+(t===active?' on':'')+'" data-t="'+t+'">'+t+'<small>'+n+'</small></button>'; }).join("");
     var term = q.value.trim().toLowerCase();
     var list = L.filter(function(x){ return (active==="All"||x.type===active) && (!term || x.t.toLowerCase().indexOf(term)>-1); });
-    items.classList.remove("open"); var lm = document.getElementById("libmore"); lm.textContent = "Show all " + list.length; lm.style.display = list.length > 6 ? "" : "none";
-    items.innerHTML = list.length ? list.map(function(x,i){ return '<a class="item'+(i>=6?' more':'')+'" style="--i:'+Math.min(i,30)+'" href="'+x.url+'" target="_blank" rel="noopener"><span class="k">'+x.type+'</span><span class="t">'+x.t+'</span><span class="w">'+x.where+' &rarr;</span></a>'; }).join("") : '<p style="padding:30px 0;color:var(--mute);font-style:italic">Nothing with that word yet. Try one of the filters.</p>';
+    items.classList.remove("open"); var lm = document.getElementById("libmore"); lm.textContent = "Show all " + list.length; lm.style.display = list.length > 5 ? "" : "none";
+    items.innerHTML = list.length ? list.map(function(x,i){ return '<a class="item'+(i>=5?' more':'')+'" style="--i:'+Math.min(i,30)+'" href="'+x.url+'" target="_blank" rel="noopener"><span class="k">'+x.type+'</span><span class="t">'+x.t+'</span><span class="w">'+x.where+' &rarr;</span></a>'; }).join("") : '<p style="padding:30px 0;color:var(--mute);font-style:italic">Nothing with that word yet. Try one of the filters.</p>';
     cnt.textContent = list.length + " of " + L.length + (term ? ' matching "' + q.value.trim() + '"' : "");
   }
   chips.addEventListener("click", function(e){ var b = e.target.closest(".chip"); if(!b) return; active = b.dataset.t; render(); });
